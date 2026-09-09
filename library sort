@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int bookid[5];
+int sorted;
+cout<<"enter 5 book IDs:"<<endl;
+for (int i=0;i<5;i++)
+{
+cout<<"book"<<i+1<<":";
+cin>>bookid[i];
+}
+for(int i=0;i<4;i++)
+{
+for(int j=0;j<4-i;j++)
+{
+if(bookid[j] > bookid[j+1])
+{
+int temp = bookid[j];
+bookid[j] = bookid[j+1];
+bookid[j+1] = temp;
+}
+}
+}
+cout<<"books after sorting:\n";
+for(int i = 0;i<5;i++)
+{
+cout<<bookid[i]<<"";
+}
+cout<<endl;
+return 0;
+}
